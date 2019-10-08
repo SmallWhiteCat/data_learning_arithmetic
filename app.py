@@ -1,8 +1,9 @@
 from flask import Flask
 from segnet.segnetTest import segnet
-
+from unet.train_module import unet
 app = Flask(__name__)
 app.register_blueprint(segnet, url_prefix='/segnet')
+app.register_blueprint(unet, url_prefix='/unet')
 
 
 @app.route('/')
